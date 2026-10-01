@@ -1,0 +1,3013 @@
+{
+  "audit_failures": [],
+  "cells_outside_main_ranking": 0,
+  "certificates": {
+    "deviations": [],
+    "fault_certificates": 2,
+    "files": [
+      "certificate_fault_worker0.json",
+      "certificate_fault_worker1.json",
+      "certificate_healthy_worker0.json",
+      "certificate_healthy_worker1.json"
+    ],
+    "healthy_certificates": 2,
+    "leaderboard_eligible": true,
+    "problems": []
+  },
+  "completion_efficiency": {
+    "median_delta_steps": -16.0,
+    "median_relative_slowdown": -0.060362173038229376,
+    "pairs": 877
+  },
+  "fault_coverage_complete": true,
+  "healthy_phase_complete": true,
+  "mail_bench_score": 0.25738976995496776,
+  "measurement_identity": [
+    "pi05_robocasa",
+    "dfa50a141384370021941c9a6b3fd651c72bf825e0dcb0afc9aad22df97ed878",
+    "9a50fddf40af13782515789f1391c3b696bd0e43dce9ccfc6803345220fefd9e",
+    "a1bfe38aed823b00e4b6d598c98120325d075f8a3bd7f3bd98c39330a609bda2",
+    "aac2ed82fa99aedaa641f85e6cebe28b1569f0fe4376783f0012c4e9e4ee9bf1"
+  ],
+  "official": true,
+  "official_shape": true,
+  "onset_check": {
+    "fault_cells_checked": 3258,
+    "mismatched": 0,
+    "mismatched_cells": []
+  },
+  "onset_realization": {
+    "fault_cells": 3258,
+    "realized_after_target": 0
+  },
+  "platform": "robocasa365",
+  "policy_configuration": "dfa50a141384370021941c9a6b3fd651c72bf825e0dcb0afc9aad22df97ed878",
+  "pre_fault_trajectory": {
+    "diverged_before_fault": 445,
+    "divergence_rate": 0.13658686310620013,
+    "fault_cells_with_reference": 3258,
+    "identical_to_healthy": 2813,
+    "not_comparable": 0
+  },
+  "scenes_per_task": 50,
+  "score": 0.25738976995496776,
+  "task_set_exact": true,
+  "task_set_verified": true,
+  "tasks": [
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.0,
+      "healthy_successes": 0,
+      "scenes": 50,
+      "task": "CloseBlenderLid",
+      "task_score": 0.0
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -359.5,
+            "median_relative_slowdown": -0.4558932957225883,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.08695652173913043,
+          "successes": 2,
+          "valid": 23,
+          "written": 23
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -120.0,
+            "median_relative_slowdown": -0.17022360149598154,
+            "pairs": 4
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.17391304347826086,
+          "successes": 4,
+          "valid": 23,
+          "written": 23
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 146.0,
+            "median_relative_slowdown": 0.23224852071005916,
+            "pairs": 9
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.391304347826087,
+          "successes": 9,
+          "valid": 23,
+          "written": 23
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -434.5,
+            "median_relative_slowdown": -0.5514586322333812,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.08695652173913043,
+          "successes": 2,
+          "valid": 23,
+          "written": 23
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -52.0,
+            "median_relative_slowdown": -0.10040153866918612,
+            "pairs": 6
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.2608695652173913,
+          "successes": 6,
+          "valid": 23,
+          "written": 23
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -8.0,
+            "median_relative_slowdown": -0.018223234624145785,
+            "pairs": 13
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.5652173913043478,
+          "successes": 13,
+          "valid": 23,
+          "written": 23
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -226.0,
+            "median_relative_slowdown": -0.4164959194304567,
+            "pairs": 16
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.6956521739130435,
+          "successes": 16,
+          "valid": 23,
+          "written": 23
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -162.0,
+            "median_relative_slowdown": -0.29701492537313434,
+            "pairs": 13
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.5652173913043478,
+          "successes": 13,
+          "valid": 23,
+          "written": 23
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -131.0,
+            "median_relative_slowdown": -0.22372881355932203,
+            "pairs": 17
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.7391304347826086,
+          "successes": 17,
+          "valid": 23,
+          "written": 23
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.46,
+      "healthy_successes": 23,
+      "scenes": 50,
+      "task": "CloseFridge",
+      "task_score": 0.40252173913043476
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 36.0,
+            "median_relative_slowdown": 0.09207161125319693,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 2,
+          "score": 0.5,
+          "successes": 1,
+          "valid": 2,
+          "written": 2
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -31.0,
+            "median_relative_slowdown": -0.0792838874680307,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 2,
+          "score": 0.5,
+          "successes": 1,
+          "valid": 2,
+          "written": 2
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -12.0,
+            "median_relative_slowdown": -0.029805233130041315,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 2,
+          "score": 1.0,
+          "successes": 2,
+          "valid": 2,
+          "written": 2
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 2,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 2,
+          "written": 2
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -6.0,
+            "median_relative_slowdown": -0.015345268542199489,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 2,
+          "score": 0.5,
+          "successes": 1,
+          "valid": 2,
+          "written": 2
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -34.0,
+            "median_relative_slowdown": -0.0764804249458981,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 2,
+          "score": 1.0,
+          "successes": 2,
+          "valid": 2,
+          "written": 2
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 2,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 2,
+          "written": 2
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -76.5,
+            "median_relative_slowdown": -0.18797953964194375,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 2,
+          "score": 1.0,
+          "successes": 2,
+          "valid": 2,
+          "written": 2
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -44.5,
+            "median_relative_slowdown": -0.10038363171355498,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 2,
+          "score": 1.0,
+          "successes": 2,
+          "valid": 2,
+          "written": 2
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.04,
+      "healthy_successes": 2,
+      "scenes": 50,
+      "task": "CloseToasterOvenDoor",
+      "task_score": 0.554
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 58.0,
+            "median_relative_slowdown": 0.10943396226415095,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 5,
+          "score": 0.2,
+          "successes": 1,
+          "valid": 5,
+          "written": 5
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -26.0,
+            "median_relative_slowdown": -0.05639913232104121,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 5,
+          "score": 0.2,
+          "successes": 1,
+          "valid": 5,
+          "written": 5
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 60.0,
+            "median_relative_slowdown": 0.11320754716981132,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 5,
+          "score": 0.2,
+          "successes": 1,
+          "valid": 5,
+          "written": 5
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 5,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 5,
+          "written": 5
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 5,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 5,
+          "written": 5
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 5,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 5,
+          "written": 5
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 5,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 5,
+          "written": 5
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 5,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 5,
+          "written": 5
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 5,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 5,
+          "written": 5
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.1,
+      "healthy_successes": 5,
+      "scenes": 50,
+      "task": "CoffeeSetupMug",
+      "task_score": 0.07
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.0,
+      "healthy_successes": 0,
+      "scenes": 50,
+      "task": "NavigateKitchen",
+      "task_score": 0.0
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 166.0,
+            "median_relative_slowdown": 0.5442622950819672,
+            "pairs": 3
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 34,
+          "score": 0.08823529411764706,
+          "successes": 3,
+          "valid": 34,
+          "written": 34
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 108.0,
+            "median_relative_slowdown": 0.32806324110671936,
+            "pairs": 5
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 34,
+          "score": 0.14705882352941177,
+          "successes": 5,
+          "valid": 34,
+          "written": 34
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 347.0,
+            "median_relative_slowdown": 1.1322751322751323,
+            "pairs": 5
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 34,
+          "score": 0.14705882352941177,
+          "successes": 5,
+          "valid": 34,
+          "written": 34
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 34,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 34,
+          "written": 34
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 34,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 34,
+          "written": 34
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 34,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 34,
+          "written": 34
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 110.0,
+            "median_relative_slowdown": 0.43478260869565216,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 34,
+          "score": 0.029411764705882353,
+          "successes": 1,
+          "valid": 34,
+          "written": 34
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 273.0,
+            "median_relative_slowdown": 0.6830189853719266,
+            "pairs": 4
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 34,
+          "score": 0.11764705882352941,
+          "successes": 4,
+          "valid": 34,
+          "written": 34
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -24.0,
+            "median_relative_slowdown": -0.08123364694093413,
+            "pairs": 6
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 34,
+          "score": 0.17647058823529413,
+          "successes": 6,
+          "valid": 34,
+          "written": 34
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.68,
+      "healthy_successes": 34,
+      "scenes": 50,
+      "task": "OpenCabinet",
+      "task_score": 0.13858823529411765
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -26.0,
+            "median_relative_slowdown": -0.09219858156028368,
+            "pairs": 17
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 28,
+          "score": 0.6071428571428571,
+          "successes": 17,
+          "valid": 28,
+          "written": 28
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -6.0,
+            "median_relative_slowdown": -0.02531645569620253,
+            "pairs": 21
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 28,
+          "score": 0.75,
+          "successes": 21,
+          "valid": 28,
+          "written": 28
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -1.0,
+            "median_relative_slowdown": -0.0033112582781456954,
+            "pairs": 23
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 28,
+          "score": 0.8214285714285714,
+          "successes": 23,
+          "valid": 28,
+          "written": 28
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 28,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 28,
+          "written": 28
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 28,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 28,
+          "written": 28
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 28,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 28,
+          "written": 28
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 28,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 28,
+          "written": 28
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -115.0,
+            "median_relative_slowdown": -0.2693208430913349,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 28,
+          "score": 0.03571428571428571,
+          "successes": 1,
+          "valid": 28,
+          "written": 28
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 83.0,
+            "median_relative_slowdown": 0.2785234899328859,
+            "pairs": 5
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 28,
+          "score": 0.17857142857142858,
+          "successes": 5,
+          "valid": 28,
+          "written": 28
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.56,
+      "healthy_successes": 28,
+      "scenes": 50,
+      "task": "OpenDrawer",
+      "task_score": 0.29528571428571426
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -53.0,
+            "median_relative_slowdown": -0.2620481927710843,
+            "pairs": 15
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 27,
+          "score": 0.5555555555555556,
+          "successes": 15,
+          "valid": 27,
+          "written": 27
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -28.0,
+            "median_relative_slowdown": -0.14056224899598393,
+            "pairs": 17
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 27,
+          "score": 0.6296296296296297,
+          "successes": 17,
+          "valid": 27,
+          "written": 27
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -13.0,
+            "median_relative_slowdown": -0.0626175588429668,
+            "pairs": 18
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 27,
+          "score": 0.6666666666666666,
+          "successes": 18,
+          "valid": 27,
+          "written": 27
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -182.0,
+            "median_relative_slowdown": -0.4449877750611247,
+            "pairs": 3
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 27,
+          "score": 0.1111111111111111,
+          "successes": 3,
+          "valid": 27,
+          "written": 27
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -6.0,
+            "median_relative_slowdown": -0.03296703296703297,
+            "pairs": 5
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 27,
+          "score": 0.18518518518518517,
+          "successes": 5,
+          "valid": 27,
+          "written": 27
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -13.5,
+            "median_relative_slowdown": -0.05637960699085393,
+            "pairs": 6
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 27,
+          "score": 0.2222222222222222,
+          "successes": 6,
+          "valid": 27,
+          "written": 27
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -59.0,
+            "median_relative_slowdown": -0.2805013156072566,
+            "pairs": 22
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 27,
+          "score": 0.8148148148148148,
+          "successes": 22,
+          "valid": 27,
+          "written": 27
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -34.0,
+            "median_relative_slowdown": -0.1927710843373494,
+            "pairs": 23
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 27,
+          "score": 0.8518518518518519,
+          "successes": 23,
+          "valid": 27,
+          "written": 27
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -28.0,
+            "median_relative_slowdown": -0.11919292892092387,
+            "pairs": 26
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 27,
+          "score": 0.9629629629629629,
+          "successes": 26,
+          "valid": 27,
+          "written": 27
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.54,
+      "healthy_successes": 27,
+      "scenes": 50,
+      "task": "OpenStandMixerHead",
+      "task_score": 0.554
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 39,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 39,
+          "written": 39
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 39,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 39,
+          "written": 39
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 136.0,
+            "median_relative_slowdown": 0.27530364372469635,
+            "pairs": 5
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 39,
+          "score": 0.1282051282051282,
+          "successes": 5,
+          "valid": 39,
+          "written": 39
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 39,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 39,
+          "written": 39
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 39,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 39,
+          "written": 39
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -83.0,
+            "median_relative_slowdown": -0.1966824644549763,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 39,
+          "score": 0.02564102564102564,
+          "successes": 1,
+          "valid": 39,
+          "written": 39
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 170.5,
+            "median_relative_slowdown": 0.52792332790772,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 39,
+          "score": 0.05128205128205128,
+          "successes": 2,
+          "valid": 39,
+          "written": 39
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 372.0,
+            "median_relative_slowdown": 1.0538243626062322,
+            "pairs": 5
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 39,
+          "score": 0.1282051282051282,
+          "successes": 5,
+          "valid": 39,
+          "written": 39
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 195.5,
+            "median_relative_slowdown": 0.5983595757296265,
+            "pairs": 6
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 39,
+          "score": 0.15384615384615385,
+          "successes": 6,
+          "valid": 39,
+          "written": 39
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.78,
+      "healthy_successes": 39,
+      "scenes": 50,
+      "task": "PickPlaceCounterToCabinet",
+      "task_score": 0.12671794871794873
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 8.0,
+            "median_relative_slowdown": 0.026755852842809364,
+            "pairs": 17
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 38,
+          "score": 0.4473684210526316,
+          "successes": 17,
+          "valid": 38,
+          "written": 38
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -4.0,
+            "median_relative_slowdown": -0.012578616352201259,
+            "pairs": 21
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 38,
+          "score": 0.5526315789473685,
+          "successes": 21,
+          "valid": 38,
+          "written": 38
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -3.0,
+            "median_relative_slowdown": -0.009259259259259259,
+            "pairs": 33
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 38,
+          "score": 0.868421052631579,
+          "successes": 33,
+          "valid": 38,
+          "written": 38
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 38,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 38,
+          "written": 38
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -219.0,
+            "median_relative_slowdown": -0.4639830508474576,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 38,
+          "score": 0.02631578947368421,
+          "successes": 1,
+          "valid": 38,
+          "written": 38
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -62.5,
+            "median_relative_slowdown": -0.19408816158042164,
+            "pairs": 10
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 38,
+          "score": 0.2631578947368421,
+          "successes": 10,
+          "valid": 38,
+          "written": 38
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 46.0,
+            "median_relative_slowdown": 0.09471234184769635,
+            "pairs": 6
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 38,
+          "score": 0.15789473684210525,
+          "successes": 6,
+          "valid": 38,
+          "written": 38
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 157.0,
+            "median_relative_slowdown": 0.4373259052924791,
+            "pairs": 7
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 38,
+          "score": 0.18421052631578946,
+          "successes": 7,
+          "valid": 38,
+          "written": 38
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 182.0,
+            "median_relative_slowdown": 0.49962234353005797,
+            "pairs": 10
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 38,
+          "score": 0.2631578947368421,
+          "successes": 10,
+          "valid": 38,
+          "written": 38
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.76,
+      "healthy_successes": 38,
+      "scenes": 50,
+      "task": "PickPlaceCounterToStove",
+      "task_score": 0.35231578947368425
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 238.5,
+            "median_relative_slowdown": 0.663963963963964,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.08695652173913043,
+          "successes": 2,
+          "valid": 23,
+          "written": 23
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 297.0,
+            "median_relative_slowdown": 0.9952228527086667,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.08695652173913043,
+          "successes": 2,
+          "valid": 23,
+          "written": 23
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 124.5,
+            "median_relative_slowdown": 0.40198671051748436,
+            "pairs": 4
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.17391304347826086,
+          "successes": 4,
+          "valid": 23,
+          "written": 23
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 23,
+          "written": 23
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -350.0,
+            "median_relative_slowdown": -0.4691689008042895,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.043478260869565216,
+          "successes": 1,
+          "valid": 23,
+          "written": 23
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -197.0,
+            "median_relative_slowdown": -0.3397336816764239,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.08695652173913043,
+          "successes": 2,
+          "valid": 23,
+          "written": 23
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 84.0,
+            "median_relative_slowdown": 0.25688073394495414,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.043478260869565216,
+          "successes": 1,
+          "valid": 23,
+          "written": 23
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -290.0,
+            "median_relative_slowdown": -0.38873994638069703,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.043478260869565216,
+          "successes": 1,
+          "valid": 23,
+          "written": 23
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 44.0,
+            "median_relative_slowdown": 0.11224489795918367,
+            "pairs": 3
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 23,
+          "score": 0.13043478260869565,
+          "successes": 3,
+          "valid": 23,
+          "written": 23
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.46,
+      "healthy_successes": 23,
+      "scenes": 50,
+      "task": "PickPlaceDrawerToCounter",
+      "task_score": 0.11556521739130435
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 68.5,
+            "median_relative_slowdown": 0.19773202436142168,
+            "pairs": 20
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 45,
+          "score": 0.4444444444444444,
+          "successes": 20,
+          "valid": 45,
+          "written": 45
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 63.0,
+            "median_relative_slowdown": 0.17518695829030945,
+            "pairs": 20
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 45,
+          "score": 0.4444444444444444,
+          "successes": 20,
+          "valid": 45,
+          "written": 45
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 53.5,
+            "median_relative_slowdown": 0.12730739337413777,
+            "pairs": 22
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 45,
+          "score": 0.4888888888888889,
+          "successes": 22,
+          "valid": 45,
+          "written": 45
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 45,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 45,
+          "written": 45
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 45,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 45,
+          "written": 45
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 45,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 45,
+          "written": 45
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 423.0,
+            "median_relative_slowdown": 1.1338129545955478,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 45,
+          "score": 0.044444444444444446,
+          "successes": 2,
+          "valid": 45,
+          "written": 45
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 284.5,
+            "median_relative_slowdown": 0.8914979557657259,
+            "pairs": 6
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 45,
+          "score": 0.13333333333333333,
+          "successes": 6,
+          "valid": 45,
+          "written": 45
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 254.5,
+            "median_relative_slowdown": 0.7053767483832155,
+            "pairs": 14
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 45,
+          "score": 0.3111111111111111,
+          "successes": 14,
+          "valid": 45,
+          "written": 45
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.9,
+      "healthy_successes": 45,
+      "scenes": 50,
+      "task": "PickPlaceSinkToCounter",
+      "task_score": 0.27666666666666667
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 0.0,
+            "median_relative_slowdown": 0.0,
+            "pairs": 3
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 14,
+          "score": 0.21428571428571427,
+          "successes": 3,
+          "valid": 14,
+          "written": 14
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 51.5,
+            "median_relative_slowdown": 0.1153030303030303,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 14,
+          "score": 0.14285714285714285,
+          "successes": 2,
+          "valid": 14,
+          "written": 14
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -55.0,
+            "median_relative_slowdown": -0.1,
+            "pairs": 3
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 14,
+          "score": 0.21428571428571427,
+          "successes": 3,
+          "valid": 14,
+          "written": 14
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 14,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 14,
+          "written": 14
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 14,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 14,
+          "written": 14
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -223.0,
+            "median_relative_slowdown": -0.385146804835924,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 14,
+          "score": 0.07142857142857142,
+          "successes": 1,
+          "valid": 14,
+          "written": 14
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 14,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 14,
+          "written": 14
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 14,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 14,
+          "written": 14
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -202.0,
+            "median_relative_slowdown": -0.3632482810310555,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 14,
+          "score": 0.14285714285714285,
+          "successes": 2,
+          "valid": 14,
+          "written": 14
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.28,
+      "healthy_successes": 14,
+      "scenes": 50,
+      "task": "PickPlaceToasterToCounter",
+      "task_score": 0.10657142857142857
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -10.0,
+            "median_relative_slowdown": -0.044444444444444446,
+            "pairs": 17
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 32,
+          "score": 0.53125,
+          "successes": 17,
+          "valid": 32,
+          "written": 32
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -16.5,
+            "median_relative_slowdown": -0.0907332433648223,
+            "pairs": 22
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 32,
+          "score": 0.6875,
+          "successes": 22,
+          "valid": 32,
+          "written": 32
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -13.0,
+            "median_relative_slowdown": -0.06666666666666667,
+            "pairs": 27
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 32,
+          "score": 0.84375,
+          "successes": 27,
+          "valid": 32,
+          "written": 32
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 1.0,
+            "median_relative_slowdown": 0.009876179245283022,
+            "pairs": 4
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 32,
+          "score": 0.125,
+          "successes": 4,
+          "valid": 32,
+          "written": 32
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 19.0,
+            "median_relative_slowdown": 0.08370044052863436,
+            "pairs": 5
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 32,
+          "score": 0.15625,
+          "successes": 5,
+          "valid": 32,
+          "written": 32
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -36.5,
+            "median_relative_slowdown": -0.1945479480411944,
+            "pairs": 18
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 32,
+          "score": 0.5625,
+          "successes": 18,
+          "valid": 32,
+          "written": 32
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -6.0,
+            "median_relative_slowdown": -0.03425253991291727,
+            "pairs": 16
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 32,
+          "score": 0.5,
+          "successes": 16,
+          "valid": 32,
+          "written": 32
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -11.5,
+            "median_relative_slowdown": -0.06972200513564811,
+            "pairs": 16
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 32,
+          "score": 0.5,
+          "successes": 16,
+          "valid": 32,
+          "written": 32
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -15.0,
+            "median_relative_slowdown": -0.07818116462976277,
+            "pairs": 20
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 32,
+          "score": 0.625,
+          "successes": 20,
+          "valid": 32,
+          "written": 32
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.64,
+      "healthy_successes": 32,
+      "scenes": 50,
+      "task": "SlideDishwasherRack",
+      "task_score": 0.517125
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -48.0,
+            "median_relative_slowdown": -0.12134195908413495,
+            "pairs": 8
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 9,
+          "score": 0.8888888888888888,
+          "successes": 8,
+          "valid": 9,
+          "written": 9
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -23.0,
+            "median_relative_slowdown": -0.09504132231404959,
+            "pairs": 7
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 9,
+          "score": 0.7777777777777778,
+          "successes": 7,
+          "valid": 9,
+          "written": 9
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -36.0,
+            "median_relative_slowdown": -0.09720496894409938,
+            "pairs": 8
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 9,
+          "score": 0.8888888888888888,
+          "successes": 8,
+          "valid": 9,
+          "written": 9
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -13.0,
+            "median_relative_slowdown": -0.026,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 9,
+          "score": 0.1111111111111111,
+          "successes": 1,
+          "valid": 9,
+          "written": 9
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -284.0,
+            "median_relative_slowdown": -0.46557377049180326,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 9,
+          "score": 0.1111111111111111,
+          "successes": 1,
+          "valid": 9,
+          "written": 9
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 127.0,
+            "median_relative_slowdown": 0.2081967213114754,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 9,
+          "score": 0.1111111111111111,
+          "successes": 1,
+          "valid": 9,
+          "written": 9
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 38.0,
+            "median_relative_slowdown": 0.12709030100334448,
+            "pairs": 3
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 9,
+          "score": 0.3333333333333333,
+          "successes": 3,
+          "valid": 9,
+          "written": 9
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 359.0,
+            "median_relative_slowdown": 1.2006688963210703,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 9,
+          "score": 0.1111111111111111,
+          "successes": 1,
+          "valid": 9,
+          "written": 9
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": 112.5,
+            "median_relative_slowdown": 0.2240368327324849,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 9,
+          "score": 0.2222222222222222,
+          "successes": 2,
+          "valid": 9,
+          "written": 9
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.18,
+      "healthy_successes": 9,
+      "scenes": 50,
+      "task": "TurnOffStove",
+      "task_score": 0.37355555555555553
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -13.0,
+            "median_relative_slowdown": -0.05044886807181889,
+            "pairs": 6
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 13,
+          "score": 0.46153846153846156,
+          "successes": 6,
+          "valid": 13,
+          "written": 13
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -16.0,
+            "median_relative_slowdown": -0.06557377049180328,
+            "pairs": 7
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 13,
+          "score": 0.5384615384615384,
+          "successes": 7,
+          "valid": 13,
+          "written": 13
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -12.5,
+            "median_relative_slowdown": -0.06474117987275882,
+            "pairs": 10
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 13,
+          "score": 0.7692307692307693,
+          "successes": 10,
+          "valid": 13,
+          "written": 13
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -204.5,
+            "median_relative_slowdown": -0.5519345500499617,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 13,
+          "score": 0.15384615384615385,
+          "successes": 2,
+          "valid": 13,
+          "written": 13
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -93.0,
+            "median_relative_slowdown": -0.3018867924528302,
+            "pairs": 3
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 13,
+          "score": 0.23076923076923078,
+          "successes": 3,
+          "valid": 13,
+          "written": 13
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -38.0,
+            "median_relative_slowdown": -0.124136489908302,
+            "pairs": 2
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 13,
+          "score": 0.15384615384615385,
+          "successes": 2,
+          "valid": 13,
+          "written": 13
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -80.5,
+            "median_relative_slowdown": -0.33068416119962507,
+            "pairs": 4
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 13,
+          "score": 0.3076923076923077,
+          "successes": 4,
+          "valid": 13,
+          "written": 13
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -30.0,
+            "median_relative_slowdown": -0.15463917525773196,
+            "pairs": 3
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 13,
+          "score": 0.23076923076923078,
+          "successes": 3,
+          "valid": 13,
+          "written": 13
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -19.5,
+            "median_relative_slowdown": -0.09829576283727125,
+            "pairs": 6
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 13,
+          "score": 0.46153846153846156,
+          "successes": 6,
+          "valid": 13,
+          "written": 13
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.26,
+      "healthy_successes": 13,
+      "scenes": 50,
+      "task": "TurnOnElectricKettle",
+      "task_score": 0.3567692307692307
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 0,
+          "score": null,
+          "successes": 0,
+          "valid": 0,
+          "written": 0
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.0,
+      "healthy_successes": 0,
+      "scenes": 50,
+      "task": "TurnOnMicrowave",
+      "task_score": 0.0
+    },
+    {
+      "conditions": {
+        "agentview_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -64.5,
+            "median_relative_slowdown": -0.1762182466602356,
+            "pairs": 30
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 30,
+          "score": 1.0,
+          "successes": 30,
+          "valid": 30,
+          "written": 30
+        },
+        "agentview_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -42.0,
+            "median_relative_slowdown": -0.12278244631185807,
+            "pairs": 28
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 30,
+          "score": 0.9333333333333333,
+          "successes": 28,
+          "valid": 30,
+          "written": 30
+        },
+        "agentview_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -25.0,
+            "median_relative_slowdown": -0.06521739130434782,
+            "pairs": 29
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 30,
+          "score": 0.9666666666666667,
+          "successes": 29,
+          "valid": 30,
+          "written": 30
+        },
+        "all_vision_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -103.0,
+            "median_relative_slowdown": -0.1921641791044776,
+            "pairs": 3
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 30,
+          "score": 0.1,
+          "successes": 3,
+          "valid": 30,
+          "written": 30
+        },
+        "all_vision_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -264.0,
+            "median_relative_slowdown": -0.4861878453038674,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 30,
+          "score": 0.03333333333333333,
+          "successes": 1,
+          "valid": 30,
+          "written": 30
+        },
+        "all_vision_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -188.0,
+            "median_relative_slowdown": -0.3462246777163904,
+            "pairs": 3
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 30,
+          "score": 0.1,
+          "successes": 3,
+          "valid": 30,
+          "written": 30
+        },
+        "wrist_missing@0.30": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": null,
+            "median_relative_slowdown": null,
+            "pairs": 0
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 30,
+          "score": 0.0,
+          "successes": 0,
+          "valid": 30,
+          "written": 30
+        },
+        "wrist_missing@0.45": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -265.0,
+            "median_relative_slowdown": -0.4880294659300184,
+            "pairs": 1
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 30,
+          "score": 0.03333333333333333,
+          "successes": 1,
+          "valid": 30,
+          "written": 30
+        },
+        "wrist_missing@0.60": {
+          "complete": true,
+          "completion_efficiency": {
+            "median_delta_steps": -178.0,
+            "median_relative_slowdown": -0.33911368015414256,
+            "pairs": 5
+          },
+          "episodes_match_healthy": true,
+          "extra_episodes": [],
+          "invalid": 0,
+          "missing_episodes": [],
+          "owed": 30,
+          "score": 0.16666666666666666,
+          "successes": 5,
+          "valid": 30,
+          "written": 30
+        }
+      },
+      "healthy_cells_observed": 50,
+      "healthy_phase_complete": true,
+      "healthy_score": 0.6,
+      "healthy_successes": 30,
+      "scenes": 50,
+      "task": "TurnOnSinkFaucet",
+      "task_score": 0.39333333333333337
+    }
+  ],
+  "tasks_evaluated": 18,
+  "tasks_expected": 18,
+  "zero_exposure_fault_cells": 0
+}

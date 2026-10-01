@@ -1,0 +1,48 @@
+# The MAIL-Bench evaluation suite, frozen.
+#
+# The task identity of a benchmark cannot be "whatever the installed RoboCasa
+# currently calls Atomic-Seen". The protocol says the task set is immutable;
+# reading it from TARGET_TASKS at run time would make it immutable only until
+# somebody upgrades a package. These eighteen names, these fifty scenes, this
+# platform, are what the benchmark means.
+#
+# The per-task horizons are RoboCasa's own and are pinned here for the same
+# reason: they decide when a rollout ends, so a changed horizon would change
+# every score without changing a single line of this repository.
+#
+# Equal to robocasa a07e365c's TARGET_TASKS["atomic_seen"] and
+# get_task_horizon(). A run whose installed RoboCasa
+# disagrees is refused rather than silently evaluated against a different suite.
+schema_version: 1
+suite_id: mail_bench_v1_atomic_seen
+protocol_id: mail_bench_perturbation_v1
+scene_bank_id: mail_robocasa_atomic_seen_v1
+platform: robocasa365
+suite: atomic_seen
+robocasa_revision: a07e365c958c4216cd6bbd5f30b47f09a65c6f00
+
+scenes_per_task: 50
+task_count: 18
+total_scenes: 900
+
+# Alphabetical, which is the order RoboCasa returns them in and the order every
+# report uses; nothing depends on the order beyond reproducibility.
+tasks:
+  - {id: CloseBlenderLid,           horizon: 900}
+  - {id: CloseFridge,               horizon: 900}
+  - {id: CloseToasterOvenDoor,      horizon: 450}
+  - {id: CoffeeSetupMug,            horizon: 600}
+  - {id: NavigateKitchen,           horizon: 450}
+  - {id: OpenCabinet,               horizon: 1050}
+  - {id: OpenDrawer,                horizon: 750}
+  - {id: OpenStandMixerHead,        horizon: 450}
+  - {id: PickPlaceCounterToCabinet, horizon: 750}
+  - {id: PickPlaceCounterToStove,   horizon: 600}
+  - {id: PickPlaceDrawerToCounter,  horizon: 750}
+  - {id: PickPlaceSinkToCounter,    horizon: 900}
+  - {id: PickPlaceToasterToCounter, horizon: 600}
+  - {id: SlideDishwasherRack,       horizon: 450}
+  - {id: TurnOffStove,              horizon: 750}
+  - {id: TurnOnElectricKettle,      horizon: 450}
+  - {id: TurnOnMicrowave,           horizon: 450}
+  - {id: TurnOnSinkFaucet,          horizon: 600}

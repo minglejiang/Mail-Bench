@@ -1,0 +1,123 @@
+{
+  "checkpoint_path": "<local checkpoint root; identified by repo, revision and inventory digest below>",
+  "critical_files": [
+    "assets/norm_stats.json",
+    "params/manifest.ocdbt",
+    "params/_METADATA"
+  ],
+  "receipt": {
+    "critical_sha256": {
+      "assets/norm_stats.json": "4aed1af411bd0e0f49d2b0e6d6832b11b8682917231a07173fbc30fd493bbdee",
+      "params/_METADATA": "f27d21952e602528615298c668b588ba14ae8268e03e94598ea0235eaea52a5f",
+      "params/manifest.ocdbt": "e0d7c903d80c8ed959cb0428463be3a85406e82b170dbae2c5ca0004f81f0839"
+    },
+    "files": {
+      "_CHECKPOINT_METADATA": {
+        "inode": 51148318,
+        "mtime_ns": 1788091901446922012,
+        "size": 426
+      },
+      "assets/norm_stats.json": {
+        "inode": 51148309,
+        "mtime_ns": 1788091901362922270,
+        "size": 3208
+      },
+      "params/_METADATA": {
+        "inode": 51148313,
+        "mtime_ns": 1788091901426922074,
+        "size": 23544
+      },
+      "params/_sharding": {
+        "inode": 51148321,
+        "mtime_ns": 1788091901442922025,
+        "size": 12797
+      },
+      "params/array_metadatas/process_0": {
+        "inode": 51148319,
+        "mtime_ns": 1788091901446922012,
+        "size": 9162
+      },
+      "params/d/35c0b41e13ddb0a578456230f51a3416": {
+        "inode": 51148317,
+        "mtime_ns": 1788091901446922012,
+        "size": 2138
+      },
+      "params/manifest.ocdbt": {
+        "inode": 51148320,
+        "mtime_ns": 1788091901450922000,
+        "size": 117
+      },
+      "params/ocdbt.process_0/d/16a296efc9531f413b90c15199e43385": {
+        "inode": 51148312,
+        "mtime_ns": 1788091924442851516,
+        "size": 538931200
+      },
+      "params/ocdbt.process_0/d/28b537f74e118c2c1c44f72e8b0e00b7": {
+        "inode": 51148316,
+        "mtime_ns": 1788091941850798150,
+        "size": 2240151552
+      },
+      "params/ocdbt.process_0/d/471d6e9b709ec1a579f83c8b4914e1ed": {
+        "inode": 51148325,
+        "mtime_ns": 1788091907318904011,
+        "size": 30384128
+      },
+      "params/ocdbt.process_0/d/5cf1127d4e3fcd6e80a66ebba54dc32d": {
+        "inode": 51148335,
+        "mtime_ns": 1788091942630795759,
+        "size": 2799407104
+      },
+      "params/ocdbt.process_0/d/6292e633c11b8f6931cac6ab824f3279": {
+        "inode": 51148334,
+        "mtime_ns": 1788091907750902687,
+        "size": 35061760
+      },
+      "params/ocdbt.process_0/d/65f82551b4d64f31f6bb1cdcf17945e1": {
+        "inode": 51148332,
+        "mtime_ns": 1788091910726893564,
+        "size": 70041600
+      },
+      "params/ocdbt.process_0/d/7f76f4974bbb6946ff46b5dbcd4d44f8": {
+        "inode": 51148337,
+        "mtime_ns": 1788091936934813221,
+        "size": 2529587200
+      },
+      "params/ocdbt.process_0/d/b627c21812ded6c524507187a8526a3e": {
+        "inode": 51148341,
+        "mtime_ns": 1788091948210778653,
+        "size": 1956962304
+      },
+      "params/ocdbt.process_0/d/b808ab91bab1b5805b381e09b7fc0a85": {
+        "inode": 51148344,
+        "mtime_ns": 1788091907618903091,
+        "size": 5367
+      },
+      "params/ocdbt.process_0/d/d71893b153190783845eb3aabec57214": {
+        "inode": 51148349,
+        "mtime_ns": 1788091907882902282,
+        "size": 1098
+      },
+      "params/ocdbt.process_0/d/d76149c5c280cb9da59fd2f948d9cdda": {
+        "inode": 51148353,
+        "mtime_ns": 1788091908046901779,
+        "size": 213
+      },
+      "params/ocdbt.process_0/d/fb6f9dae6d90f1b488a3d4ebf79278ed": {
+        "inode": 51148352,
+        "mtime_ns": 1788091944710789382,
+        "size": 2240278528
+      },
+      "params/ocdbt.process_0/manifest.ocdbt": {
+        "inode": 51148356,
+        "mtime_ns": 1788091908306900982,
+        "size": 486
+      }
+    },
+    "inventory_sha256": "dfa50a141384370021941c9a6b3fd651c72bf825e0dcb0afc9aad22df97ed878",
+    "repo": "robocasa/robocasa365_checkpoints",
+    "revision": "pi05_pretrain_human300/multitask_learning/75000",
+    "schema_version": 1,
+    "verified_on": "2026-08-31"
+  },
+  "verification": "full_byte_level"
+}

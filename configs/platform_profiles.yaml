@@ -1,0 +1,54 @@
+schema_version: 2
+registry_id: mail_bench_platform_profiles_v1
+protocol_version: mail_bench_perturbation_v1
+
+scope: >-
+  What the evaluated platform's cameras physically are, read out of the
+  simulator's own model (the camera's parent body) rather than inferred from
+  the camera's name. MAIL-Bench evaluates robocasa365 only; a later release
+  that adds a platform adds its profile here, and aligns conditions across
+  platforms by the functional roles in mail_bench.semantic_states, never by
+  camera name.
+
+note: >-
+  Two naming spaces are kept apart on purpose. The keys under `cameras` are the
+  simulator's own camera names; `canonical_id` is what the benchmark calls that
+  camera, and it is canonical ids that appear in fault manifests and results.
+
+platforms:
+  robocasa365:
+    simulator: mujoco
+    robot_base: mobile
+    control_hz: 20
+    verified_from: robocasa_camera_utils_CAM_CONFIGS_DEFAULT
+    cameras:
+      robot0_agentview_left:
+        canonical_id: robot0_agentview_left
+        parent_body: mobilebase0_support
+        moves_with_robot: true
+        functional_role: onboard_third_person_view
+        in_policy_grid: true
+      robot0_agentview_right:
+        canonical_id: robot0_agentview_right
+        parent_body: mobilebase0_support
+        moves_with_robot: true
+        functional_role: onboard_third_person_view
+        in_policy_grid: true
+      robot0_eye_in_hand:
+        canonical_id: robot0_eye_in_hand
+        parent_body: robot0_right_hand
+        moves_with_robot: true
+        functional_role: wrist_view
+        in_policy_grid: true
+      robot0_agentview_center: {parent_body: mobilebase0_support, moves_with_robot: true, in_policy_grid: false}
+      robot0_frontview:        {parent_body: mobilebase0_support, moves_with_robot: true, in_policy_grid: false}
+    grid_cameras: [robot0_agentview_left, robot0_agentview_right, robot0_eye_in_hand]
+    # The ranking's three missing states on this platform, by functional role.
+    missing_states:
+      wrist_missing: [robot0_eye_in_hand]
+      agentview_missing: [robot0_agentview_left, robot0_agentview_right]
+      all_vision_missing: [robot0_agentview_left, robot0_agentview_right, robot0_eye_in_hand]
+    note: >-
+      No world-fixed camera exists here. Every view moves with the robot, and
+      the two third-person views are redundant with each other, which is why
+      the third-person state removes both.

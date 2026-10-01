@@ -1,0 +1,128 @@
+# MAIL-Bench reference baselines.
+#
+# One entry per evaluated policy, and each entry is one fixed multi-task
+# configuration for all eighteen RoboCasa Atomic-Seen tasks. Per-task
+# checkpoints have no place here: the official ranking evaluates a policy, and a
+# roster that allowed one row to mean eighteen checkpoints would let a
+# submission be eighteen specialists wearing one name.
+#
+# These are reference baselines, not the benchmark's boundary. A submission does
+# not appear here; it runs its own policy server against the same frozen scenes.
+schema_version: 1
+registry_id: mail_bench_v1_roster
+protocol_version: mail_bench_perturbation_v1
+scene_bank_id: mail_robocasa_atomic_seen_v1
+platform: robocasa365
+suite: atomic_seen
+
+admission:
+  # What a baseline must show before its numbers are reported, and nothing more.
+  # Clean competence is published rather than gated: a threshold on it would
+  # select for stability instead of for a correct adapter, and would exclude the
+  # models the benchmark exists to measure.
+  requires:
+    - execution_correctness_check
+    - a_real_healthy_rollout_completes_the_task
+    - clean_performance_published_in_full
+    - one_configuration_across_all_eighteen_tasks
+  clean_success_is: reported_not_gated
+  stops_only_when: no_scene_has_a_healthy_success
+
+models:
+  - id: pi05_robocasa
+    main_table: true
+    checkpoint_scope: all_suites
+    artifact_verified: true
+    display_name: "π0.5 (RoboCasa multitask)"
+    family: openpi
+    category: diffusion_chunked_vla
+    pin_status: pinned
+    # A checkpoint is one way to be a fixed configuration; a LoRA or an adapter
+    # would be another. What matters is that it does not change between tasks.
+    configuration_kind: checkpoint
+    repo: robocasa/robocasa365_checkpoints
+    source_revision: c484448aba1a9b60a04c9b0ca117241518ea69f3
+    model_revision: pi05_pretrain_human300/multitask_learning/75000
+    inventory_sha256: dfa50a141384370021941c9a6b3fd651c72bf825e0dcb0afc9aad22df97ed878
+    execution_critical_files:
+      - assets/norm_stats.json
+      - params/manifest.ocdbt
+      - params/_METADATA
+    policy_visible_cameras:
+      - robot0_agentview_left
+      - robot0_agentview_right
+      - robot0_eye_in_hand
+    availability_consumed_by_policy: false
+    predicted_action_chunk: 50
+    native_execution_horizon: 5
+    action_dimension: 12
+    stateful_policy: false
+    reset_semantics: stateless
+    training_regime: clean_trained
+    training_disclosure:
+      training_data_scope: robocasa_human_demonstrations
+      fault_augmentation_used: false
+      fault_types_seen_during_training: []
+    upstream_claim: >-
+      RoboCasa365's own reported Atomic-Seen success for this multitask
+      checkpoint under their protocol: 39.6%.
+    verified_receipt: results/pi05_robocasa_receipt.json
+
+  - id: groot_n1_5_robocasa
+    display_name: "GR00T N1.5 (RoboCasa365 official)"
+    family: groot
+    category: dual_system_vla
+    main_table: true
+    pin_status: pinned
+    artifact_verified: true
+    configuration_kind: checkpoint
+    # One checkpoint for every suite, identified by the digest of its whole
+    # verified snapshot inventory, as the π0.5 entry's is.
+    checkpoint_scope: all_suites
+    repo: robocasa/robocasa365_checkpoints
+    source_revision: c484448aba1a9b60a04c9b0ca117241518ea69f3
+    model_revision: gr00t_n1-5/multitask_learning/checkpoint-120000
+    checkpoint_subdir: gr00t_n1-5/multitask_learning/checkpoint-120000
+    inventory_sha256: bfbedfff92a2aace210c3db34d192ba7a53997ad38abb82dfe8a3f110e78d25a
+    execution_critical_files: [model.safetensors.index.json, config.json]
+    omitted_from_inventory: [optimizer.pt, rng_state.pth, scheduler.pt]
+    verified_receipt: results/groot_n1_5_robocasa_receipt.json
+    server: scripts/groot15_robocasa_policy_server.py
+    server_port: 7614
+    # Must match the server's own identity response: the cohort refuses to
+    # start if the two disagree.
+    policy_visible_cameras: [robot0_agentview_left, robot0_agentview_right, robot0_eye_in_hand]
+    availability_consumed_by_policy: false
+    predicted_action_chunk: 16
+    native_execution_horizon: 16
+    action_dimension: 12
+    stateful_policy: false
+    reset_semantics: stateless
+    training_regime: clean_trained
+    training_disclosure:
+      fault_aware_training: false
+      benchmark_specific_tuning: false
+      disclosure_source: >-
+        The RoboCasa365 team's own multitask fine-tune of GR00T N1.5 on the
+        Human300 mixture for 120k steps. Nothing in it was trained on camera
+        loss, and nothing was tuned on this benchmark's frozen scenes.
+    selection_reason: >-
+      Seen-task by construction: the RoboCasa365 team's own checkpoint on the
+      same Human300 mixture the frozen suite is drawn from, so a fault score
+      measures robustness rather than transfer.
+    upstream_claim: >-
+      The RoboCasa365 team's GR00T N1.5 multitask checkpoint (leaderboard
+      Atomic-Seen 50.7%, paper 43.0%), fine-tuned on Human300 for 120k steps
+      with the robocasa-benchmark fork of Isaac-GR00T.
+    declared_interface:
+      embodiment: new_embodiment (the fork's tag)
+      cameras: [robot0_agentview_left, robot0_agentview_right, robot0_eye_in_hand]
+      modality_source: experiment_cfg/metadata.json (read at load)
+    runtime:
+      repo: robocasa-benchmark/Isaac-GR00T
+      pinned_commit: 9d7d7a9eb7
+      key_pins: {python: "3.10", torch: 2.5.1, torchvision: 0.20.1, transformers: 4.51.3, diffusers: 0.30.2, flash_attn: 2.7.4.post1}
+      # The instruction is passed to the GR00T transform as a 0-d numpy array:
+      # a list or 1-d array renders in the chat template as "['...']" with
+      # brackets and quotes, which is neither the training text nor what
+      # RoboCasa's own evaluator produces, and a bare str fails at x[0].

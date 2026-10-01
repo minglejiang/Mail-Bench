@@ -1,0 +1,451 @@
+schema_version: 3
+protocol_id: mail_bench_perturbation_v1
+benchmark_name: >-
+  MAIL-Bench: Benchmarking Robotic Manipulation under Visual Availability
+  Interruptions and Loss
+# What the protocol governs is how a run is conducted, not what anyone may do
+# with the code: this repository is MIT (see LICENSE). The platforms, datasets
+# and checkpoints a run binds stay under their own publishers' terms, and none
+# of them is redistributed here.
+intended_use: research_evaluation_protocol
+primary_claim: phase_normalized_visual_availability_robustness_of_embodied_policies
+canonical_enums:
+  # Fault modes are the canonical modes of mail_bench.operators; the platform
+  # key below equals the dataset registry id.
+  dataset_ids: configs/dataset_registry.yaml
+result_schema_version: 3   # result records carry onset_step (the target) beside realized_onset_step
+
+# ----------------------------------------------------------------------------
+# The four evaluation dimensions
+#
+# The concept layer. The main ranking and the three mechanism analyses are not
+# four benchmarks: they are the experiment tables inside the third dimension.
+# ----------------------------------------------------------------------------
+evaluation_dimensions:
+  capability:
+    question: can the policy solve the task under healthy visual conditions
+    measured_by: one canonical healthy rollout per policy per official scene
+    yields: [healthy_success, healthy_completion_step, healthy_score_H]
+  when:
+    question: at what stage of its own successful execution is vision lost
+    measured_by: onset fractions of the evaluated policy's healthy completion step
+    fractions: [0.30, 0.45, 0.60]
+    estimand: phase_normalized_robustness_not_identical_absolute_time
+  what_how:
+    question: which visual information is lost, and how does the failure evolve
+    measured_by: [main_ranking, failure_form, missing_duration, visual_recovery]
+    required_for_a_valid_submission: [main_ranking]
+    optional_mechanism_extensions: [failure_form, missing_duration, visual_recovery]
+  outcome:
+    question: how does the failure change task success and execution efficiency
+    measured_by: [healthy_score_H, missing_condition_score_M, task_score_S,
+                  paired_completion_slowdown]
+
+# ----------------------------------------------------------------------------
+# Semantic camera states
+#
+# The ranking asks what functional visual information was lost, not which
+# physical camera. Enumerating subsets would make a three-camera platform answer
+# seven questions and a two-camera platform three, so no condition would mean the
+# same thing on two platforms and nothing could be compared across them. Three
+# roles do mean the same thing everywhere.
+# ----------------------------------------------------------------------------
+semantic_camera_states:
+  states: [healthy, wrist_missing, agentview_missing, all_vision_missing]
+  # MAIL-Bench evaluates one platform. A later release that adds a platform
+  # adds its role map (src/mail_bench/semantic_states.py), profile and adapter
+  # together; a protocol that lists platforms it does not evaluate cannot be
+  # read as a statement of what the benchmark is.
+  platform_mapping:
+    robocasa365:
+      wrist_missing: [robot0_eye_in_hand]
+      # Two onboard views of the same scene: losing one is a materially milder
+      # condition than losing the third-person role, so they move together.
+      agentview_missing: [robot0_agentview_left, robot0_agentview_right]
+      all_vision_missing: [robot0_agentview_left, robot0_agentview_right, robot0_eye_in_hand]
+  partial_combinations:
+    ranked: false
+    executable: true
+    note: >-
+      A single agentview is a legitimate diagnostic and runs normally. It is
+      not part of the official ranking because the ranking asks about the loss
+      of the agentview functional role, which two redundant third-person views
+      serve jointly: losing one of them is a materially milder condition and
+      would answer a different question under the same name.
+  all_vision_missing_is_ranked: >-
+    Total visual loss is a ranked condition. A policy that keeps working without any camera is
+    telling us something about how much it was using vision at all, and that
+    belongs in the score rather than beside it.
+
+# ----------------------------------------------------------------------------
+# Main ranking
+# ----------------------------------------------------------------------------
+main_ranking:
+  fault_mode: hard_missing
+  fault_duration: until_episode_end
+  duration_note: >-
+    The onset fraction decides when vision is lost, never when it returns. There
+    is no recovery in the ranking; recovery is what the Visual Recovery study is
+    for.
+  onset_fractions: [0.30, 0.45, 0.60]
+  conditions:
+    - {id: healthy,                onset: null, weight: 1}
+    - {id: wrist_missing,          onset: 0.30, weight: 1}
+    - {id: wrist_missing,          onset: 0.45, weight: 1}
+    - {id: wrist_missing,          onset: 0.60, weight: 1}
+    - {id: agentview_missing,   onset: 0.30, weight: 1}
+    - {id: agentview_missing,   onset: 0.45, weight: 1}
+    - {id: agentview_missing,   onset: 0.60, weight: 1}
+    - {id: all_vision_missing,           onset: 0.30, weight: 1}
+    - {id: all_vision_missing,           onset: 0.45, weight: 1}
+    - {id: all_vision_missing,           onset: 0.60, weight: 1}
+  weighting: 10_percent_healthy_and_30_percent_each_missing_role
+
+scoring:
+  healthy_score: N_healthy_success / N_task_scenes
+  missing_condition_score:
+    formula: N_fault_success / N_healthy_success
+    evaluated_on: scenes_whose_canonical_healthy_rollout_succeeded
+    denominator_note: >-
+      The denominator is the count of healthy-successful scenes, not the count
+      of fault rollouts that happened to be written. A fault cell that was owed
+      and never produced therefore lowers the score instead of vanishing from
+      its own denominator.
+    no_healthy_success_in_task: reported_as_na_and_counted_as_zero
+    reading: >-
+      Conditional on the policy being able to do the task at all, so it answers
+      "of the scenes it can solve, how many survive this fault". No second
+      reading of the same condition is published: two numbers for one condition
+      invite a reader to take whichever supports the claim, and the healthy
+      score already stands beside them saying how much of the suite the policy
+      can do at all.
+  task_score: (H + sum of the nine missing condition scores) / 10
+  platform_score: equal average over the platform's tasks
+  benchmark_score:
+    formula: mean of the eighteen task scores
+    requires: all_eighteen_tasks
+    partial_task_coverage: >-
+      Reportable as an experiment, never as an official submission and never as
+      SOTA. An average over a subset of tasks is a different quantity, and
+      letting it carry the benchmark's name would put two numbers meaning
+      different things in one column.
+  completion_efficiency:
+    reported: true
+    affects_ranking: false
+    measured_on: scenes_where_both_the_healthy_and_the_fault_rollout_succeeded
+    failed_rollouts: never_assigned_an_artificial_completion_time
+
+# ----------------------------------------------------------------------------
+# Mechanism analyses
+#
+# Optional. None of them affects the MAIL-Bench score, and a submission that
+# reports only the main ranking is complete. Each fixes everything except the
+# one thing it studies.
+# ----------------------------------------------------------------------------
+mechanism_analyses:
+  failure_form:
+    question: how the visual stream becomes unreliable, holding when constant
+    onset_fraction: 0.60
+    duration: until_episode_end
+    # Canonical ids from mail_bench.operators.CANONICAL_MODES. 'stale' is an
+    # accepted alias on input and is never written to a manifest, so a
+    # protocol naming the alias would describe cells the validator rejects.
+    forms: [hard_missing, blackout, freeze, stale_k, burst_dropout]
+    canonical_stale_ms: 500
+    canonical_burst_block_ms: 500
+    burst_first_block: always_missing
+    burst_subsequent_blocks: deterministic_50_50_from_the_fault_seed
+    timing_note: >-
+      Specified in milliseconds, not control steps: ten steps of stale vision is
+      half a second at 20 Hz and a third of one at 30 Hz, so a step count would
+      make one canonical setting mean different things on different platforms.
+      RoboCasa runs at 20 Hz, so 500 ms is 10 control steps.
+    reuse: >-
+      Hard Missing at 60% is already a main-ranking condition and is referenced
+      rather than run again.
+  missing_duration:
+    question: how long the loss persists, holding what is lost and when constant
+    onset_fraction: 0.45
+    mode: hard_missing
+    fractions_of_remaining_episode: [0.25, 0.50, 1.00]
+    remaining_episode_note: >-
+      Of what remains of the policy's own successful trajectory,
+      T_healthy - onset_step, not of what remains of the platform's
+      horizon. The onset is a phase of that trajectory and the duration
+      has to be measured against the same thing, or one fraction means a
+      different condition for every policy -- and in the direction that
+      interrupts a faster policy for longer relative to its own task.
+    reuse: >-
+      The full-duration cell is the main-ranking condition at 45% and is not
+      rerun.
+  visual_recovery:
+    question: whether the policy continues after the stream comes back
+    mode: hard_missing
+    onset_fraction: 0.30
+    recovery_fraction: 0.60
+    interruption: 0.30_of_the_policys_own_healthy_trajectory
+    both_ends_fixed: >-
+      Sweeping the recovery point would answer how long an interruption can be,
+      which is what Missing Duration studies. How a policy resets its memory or
+      invalidates an action chunk when vision returns is model design and is
+      measured, not imposed.
+
+# ----------------------------------------------------------------------------
+# Openness
+#
+# The benchmark standardizes how the fault is applied and measured. It takes no
+# position on how a submission was built or trained, and asks only that the
+# submitter say what they did clearly enough to reproduce and interpret it.
+# ----------------------------------------------------------------------------
+model_and_submission_openness:
+  unconstrained:
+    [architecture, pretraining_data, finetuning_method, adaptation_strategy,
+     augmentation, memory, router, imputation, world_model, mixture_of_experts,
+     test_time_adaptation, action_representation]
+  training_regime:
+    value: declared_by_submitter
+    ranked: false
+    admission_condition: false
+    rationale: >-
+      A free-text declaration, not an enum and not a track. The protocol neither
+      forbids nor endorses training on this benchmark's fault conditions:
+      forbidding it would rule out fault-aware training, routers, imputation and
+      memory adaptation, which are exactly the kinds of contribution the
+      benchmark exists to measure, and endorsing it would steer submissions just
+      as hard. The disclosure fields below let a reader see for themselves
+      whether a result came from clean training or from fault-aware adaptation.
+  training_disclosure_fields:
+    [training_data_scope, adaptation_recipe, fault_augmentation_used,
+     fault_types_seen_during_training, final_checkpoint_identity]
+  checkpoint_organization:
+    rule: >-
+      One fixed policy configuration across all eighteen tasks -- a checkpoint,
+      a LoRA or an adapter, whichever the submission uses -- and only the
+      identity that actually ran must be declared. Switching between them per
+      task is not an official submission.
+  task_coverage:
+    official_submission_requires: all_eighteen_atomic_seen_tasks
+    partial_task_coverage: >-
+      Reportable as an experiment, never as an official submission and never as
+      state of the art. An average over a subset of tasks is a different
+      quantity, and letting it carry the benchmark's name would put two numbers
+      meaning different things in one column.
+    one_policy_configuration: >-
+      One fixed multi-task policy across all eighteen tasks. A checkpoint, a
+      LoRA or an adapter is all fine; switching between them per task is not,
+      because a benchmark of eighteen specialists measures something other than
+      a policy.
+version_policy:
+  two_version_numbers:
+    protocol_version: enters manifest.semantic_hash(); changing it invalidates every computed cell
+    result_schema_version: observability-only additions; older results stay readable and resumable
+  bump_protocol_version_when_changing:
+    [task_inclusion, onset, duration, validity, ranking, fault_semantics,
+     action_or_query_semantics, healthy_definition, pairing, recovery_definition,
+     model_input_semantics]
+  bump_result_schema_version_only_when_adding:
+    [runtime_metadata, diagnostic_hash, hardware_info, profiling, optional_audit_field]
+  result_schema_precondition: rollout trajectory and eligibility unchanged
+  automatic_evaluation_pipeline: >-
+    Evaluating a policy is one operation. The benchmark restores the frozen
+    scene, runs the canonical healthy rollout, and on success derives that
+    policy's own 30, 45 and 60 percent onsets and runs the fault conditions
+    against paired replays of the same scene; on failure it records the clean
+    failure and runs no fault rollout. The phases may run in one invocation or
+    separately; either way the driver derives every onset from the healthy
+    cells, the published onset manifest is checked against execution at scoring
+    time rather than consumed by it, and a submitter never supplies another
+    model as a reference: their own architecture's healthy trajectory is the
+    reference.
+  released_protocol_versions_are_immutable: >-
+    Once results have been published under a protocol version, a semantic change
+    opens a NEW version. The released version is never edited in place, earlier
+    results are never overwritten, and results from different protocol versions
+    are never mixed in one table.
+# ----------------------------------------------------------------------------
+# Onset and duration
+# ----------------------------------------------------------------------------
+onset_definition:
+  primary: healthy_reference
+  rule: >-
+    onset_step = half_up(fraction * T_healthy(model, scene)), where T_healthy is
+    the step at which THE EVALUATED MODEL ITSELF completes the task on that
+    frozen scene under its canonical healthy rollout (replan-aligned). If that
+    healthy rollout fails, T_healthy is undefined and so is 30, 45 or 60 percent
+    of a successful trajectory that does not exist: the scene records
+    healthy_success=false, fault_evaluable=false, skip_reason=healthy_unsolved,
+    and ITS FAULT ROLLOUTS ARE NOT EXECUTED. That is not the same as scoring
+    them as failures -- the fault experiment is undefined, because the policy
+    never demonstrated the task capability the phase is measured against. No
+    horizon-derived onset is assigned. The scene stays in the clean and fault
+    matrices as a clean failure so that a weak model cannot look robust by
+    solving only easy scenes. Each
+    model publishes its own per-scene onset manifest -- scene_identity,
+    healthy_success, T_healthy, onset at each fraction, fault_evaluable and
+    skip_reason -- rather than
+    the platform publishing one shared reference file.
+  estimand: >-
+    The fractions name a task phase, not a wall-clock step: 0.30, 0.45 and 0.60
+    are early, middle and late in the task as that model performs it. Two models
+    that take 300 and 600 steps to finish a scene reach 45% of the task at step
+    135 and step 270, and faulting both at some shared step would put one past
+    the midpoint while the other is still in the first half. What the main ranking
+    compares is therefore phase-normalised visual robustness, and cross-model tables say so.
+    Identical absolute-time perturbation is a coherent experiment too; it is not
+    this one.
+  fractions: [0.30, 0.45, 0.60]          # the ranking's three onsets; there are no others
+  fallback: none            # a healthy failure skips its fault cells, see rule
+  healthy_failure_handling:
+    fault_evaluable: false
+    skip_reason: healthy_unsolved
+    fault_rollouts_executed: 0
+    retained_in: [healthy_score]
+    excluded_from: [missing_condition_score, paired_completion_efficiency]
+  chunked_policy_onset:
+    target_onset_step: half_up(fraction * T_healthy)
+    realized_onset_step: >-
+      first valid visual query boundary at or after the target. A policy that
+      requests observations every k steps cannot be faulted between them, so both
+      values are recorded and the realized one is what the cell means.
+  validity_gate:
+    fault_cell_requires: faulted_observations_consumed_gt_0
+    recovery_eligible_requires: [healthy_reference_success, fault_reached_before_episode_end]
+duration_definition:
+  rule: end_step = onset_step + half_up(duration_fraction * (T_healthy - onset_step)); 1.0 means to the episode end
+  fractions: [0.25, 0.50, 1.00]
+  note: duration 1.0 at a given onset is the same cell as the main-ranking cell at that onset; it is stored once and referenced
+
+# ----------------------------------------------------------------------------
+# Pairing, randomness and replication
+# ----------------------------------------------------------------------------
+pairing:
+  unit: [benchmark, task, episode_seed, policy_seed, camera_subset, mode, onset_step, end_step]
+  seed_derivation:
+    rule: >-
+      environment, policy and fault streams: sha256 over canonical JSON of
+      (namespace, benchmark, task, episode_index, protocol_version) -> 64-bit
+      int. The scene-bank seed that decides which scenes exist is bound to
+      scene_bank_id and never to protocol_version. Healthy replicates 1..k
+      add (healthy_replicate, replicate_index), while replicate 0 is the
+      canonical paired policy stream
+    namespaces: {environment: mcr.env, policy: mcr.policy, fault: mcr.fault}
+    streams_independent: true
+    policy_stream_identical_across_arms: required
+    fault_parameters_never_drawn_from_policy_stream: required
+  pre_fault_equivalence_test: bitwise_or_numerically_equal_trajectory_prefix_before_onset_across_arms
+  healthy_arm:
+    replicates_per_seed: 1           # one canonical healthy rollout per scene
+    official_replicates_per_seed: 1
+    replication_rationale: >-
+      The official run asks how a fault changes an outcome on fifty scenes per
+      task, where the scene is the unit and repeats buy less than more scenes
+      would; the one canonical rollout is also the trajectory the fault arm
+      shares its policy stream with, so a second one would have no pairing.
+    clean_solvable_definition: the_canonical_healthy_rollout_succeeded
+    onset_healthy_reference: evaluated_policy_healthy_reference
+    completion_aggregation: healthy_completion_step_then_half_up
+  scene_freezing:
+    rule: frozen replayable scenes; a seed enters the cohort only if canonical playback reproduces the scene identity for every task
+    seed_list: explicit_list_not_necessarily_contiguous
+
+# ----------------------------------------------------------------------------
+# Platform profile (the key equals the dataset_registry.yaml id)
+#
+# One, because MAIL-Bench evaluates one platform: a benchmark that lists
+# platforms it does not evaluate cannot be read as a statement of what it
+# evaluates.
+# ----------------------------------------------------------------------------
+platform_profiles:
+  robocasa:
+    # The camera ids are the ones platform_profiles.yaml verified against
+    # MuJoCo, and that file is the single authority; this block restates them so
+    # that a preflight compares one vocabulary, never two.
+    camera_authority: configs/platform_profiles.yaml#robocasa365.grid_cameras
+    cameras: [robot0_agentview_left, robot0_agentview_right, robot0_eye_in_hand]
+    control_hz: 20
+    official_horizon: per_task_from_dataset_registry
+    # What each policy reads is declared by its server and pinned in the
+    # roster (configs/mail_bench_roster.yaml); the protocol does not restate
+    # it, and every policy is ranked on all ten conditions whatever it reads.
+    semantic_groups:
+      third_person_pair: [robot0_agentview_left, robot0_agentview_right]
+      wrist: [robot0_eye_in_hand]
+      all: [robot0_agentview_left, robot0_agentview_right, robot0_eye_in_hand]
+    onset_healthy_reference: evaluated_policy_healthy_reference
+official_metrics:
+  primary:
+    healthy_score: >-
+      H_t = N(healthy success in t) / 50. Task capability before any visual
+      failure, over every scene of the task including the ones it could not
+      solve.
+    missing_condition_score: >-
+      M_c,t = N(successful VALID fault rollouts under c) / N(healthy success in
+      t). Among the scenes this policy can normally solve, how often it still
+      solves them under condition c. The denominator is the healthy-success
+      count and never shrinks: a cell that was owed and never written lowers the
+      score, and so does one in which the fault never reached the policy,
+      because a task finished before the intervention arrived says nothing about
+      robustness.
+    task_score: >-
+      S_t = (H_t + the nine M_c,t) / 10. Ten equally weighted components, so a
+      task is 10% capability and 30% each of wrist, agentview and total visual
+      loss.
+    benchmark_score: >-
+      The equal average of the eighteen task scores. Each task carries the same
+      weight, so a task with more scenes does not weigh more.
+    reporting_rule: >-
+      Publish H_t beside every M_c,t. A task the policy solved once has an M_c
+      of exactly 0.00 or 1.00, and without its denominator the 1.00 reads as
+      robustness rather than as one rollout.
+  secondary_completion_efficiency:
+    quantities: [completion_env_steps, policy_queries]
+    cross_model_quantity: completion_env_steps
+    policy_queries_note: >-
+      Diagnostic only. Policies execute different numbers of actions per visual
+      query, so fewer queries is not more efficient; it is often less looking.
+    paired_on_scenes_where_both_succeeded:
+      delta_steps: T_fault - T_healthy
+      relative_slowdown: (T_fault - T_healthy) / T_healthy
+      aggregation: median_of_per_scene_paired_slowdowns
+      aggregation_note: >-
+        Not the difference of two independently aggregated medians, and never
+        computed over failed episodes: a failed episode has no completion time and
+        must not be folded in as the horizon, which would blend the failure rate
+        into the efficiency number.
+    rationale: >-
+      A fault can degrade a policy without changing whether it succeeds. Reporting
+      completion efficiency alongside success exposes the case where the task is
+      still finished but visibly less well.
+
+minimum_reporting:
+  official_metric_first: true
+  disaggregated_conditions_required: true
+  macro_only_prohibited: true
+  paired_evaluation: true
+  include_failures_and_negative_results: true
+  # What a report of an official run carries, in this order. The scorer
+  # (mail_bench.aggregate.mail_bench_report) produces every one of them.
+  metrics: [healthy_score_per_task, condition_scores_M_c_with_owed_denominator,
+            task_scores, mail_bench_score, zero_exposure_fault_cells,
+            onset_realization, pre_fault_trajectory_divergence,
+            completion_efficiency_paired_slowdown]
+  fault_exposure_required_next_to_every_score: [faulted_observations_consumed, post_fault_action_steps, max_actions_after_fault_query, native_action_chunk_length, mean_query_interval]
+  exposure_rationale: >-
+    Visual exposure and control exposure are different quantities. A policy that
+    emits a 50-step chunk can execute an entire fault window from a single
+    faulted observation and look robust merely because it stopped looking. The
+    ranking is not adjusted for this, but the exposure is always reported next to
+    the score so the comparison stays interpretable.
+  matched_replanning_diagnostic:
+    main_leaderboard: native_action_chunk
+    mechanism_table: RunnerConfig.max_actions_per_query fixed across models
+    question: is a difference between models caused by what they do with the observations, or by a longer open-loop chunk
+  model_roster: configs/mail_bench_roster.yaml
+  metric_definitions: docs/MAIL_BENCH_PROTOCOL.md#4-main-ranking
+
+causal_rules:
+  scope: while_a_camera_is_unavailable
+  unavailable_camera_post_onset_frames_visible_to: []          # policy, generator, gate, memory, cache, router
+  delayed_frames_of_available_streams: allowed_with_recorded_source_age
+  hidden_frames_allowed_for_post_episode_scoring: true
+  route_or_availability_change_requires_action_chunk_policy: explicit_and_hashed

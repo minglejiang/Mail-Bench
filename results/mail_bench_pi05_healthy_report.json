@@ -1,0 +1,113 @@
+{
+  "clean_success": 0.4022222222222222,
+  "completion_steps": {
+    "max": 885,
+    "median": 360.0,
+    "min": 143,
+    "n": 362,
+    "p25": 279,
+    "p75": 468
+  },
+  "healthy_successes": 362,
+  "integrity": {
+    "audit_failures": [],
+    "complete": true,
+    "duplicates": [],
+    "n_duplicate": 0,
+    "n_expected": 900,
+    "n_missing": 0,
+    "n_unique": 900
+  },
+  "per_task": {
+    "CloseBlenderLid": {
+      "median_completion_step": null,
+      "scenes": 50,
+      "solved": 0
+    },
+    "CloseFridge": {
+      "median_completion_step": 578,
+      "scenes": 50,
+      "solved": 23
+    },
+    "CloseToasterOvenDoor": {
+      "median_completion_step": 416.5,
+      "scenes": 50,
+      "solved": 2
+    },
+    "CoffeeSetupMug": {
+      "median_completion_step": 530,
+      "scenes": 50,
+      "solved": 5
+    },
+    "NavigateKitchen": {
+      "median_completion_step": null,
+      "scenes": 50,
+      "solved": 0
+    },
+    "OpenCabinet": {
+      "median_completion_step": 521.0,
+      "scenes": 50,
+      "solved": 34
+    },
+    "OpenDrawer": {
+      "median_completion_step": 295.0,
+      "scenes": 50,
+      "solved": 28
+    },
+    "OpenStandMixerHead": {
+      "median_completion_step": 207,
+      "scenes": 50,
+      "solved": 27
+    },
+    "PickPlaceCounterToCabinet": {
+      "median_completion_step": 340,
+      "scenes": 50,
+      "solved": 39
+    },
+    "PickPlaceCounterToStove": {
+      "median_completion_step": 347.5,
+      "scenes": 50,
+      "solved": 38
+    },
+    "PickPlaceDrawerToCounter": {
+      "median_completion_step": 424,
+      "scenes": 50,
+      "solved": 23
+    },
+    "PickPlaceSinkToCounter": {
+      "median_completion_step": 371,
+      "scenes": 50,
+      "solved": 45
+    },
+    "PickPlaceToasterToCounter": {
+      "median_completion_step": 544.5,
+      "scenes": 50,
+      "solved": 14
+    },
+    "SlideDishwasherRack": {
+      "median_completion_step": 195.5,
+      "scenes": 50,
+      "solved": 32
+    },
+    "TurnOffStove": {
+      "median_completion_step": 462,
+      "scenes": 50,
+      "solved": 9
+    },
+    "TurnOnElectricKettle": {
+      "median_completion_step": 244,
+      "scenes": 50,
+      "solved": 13
+    },
+    "TurnOnMicrowave": {
+      "median_completion_step": null,
+      "scenes": 50,
+      "solved": 0
+    },
+    "TurnOnSinkFaucet": {
+      "median_completion_step": 396.5,
+      "scenes": 50,
+      "solved": 30
+    }
+  }
+}

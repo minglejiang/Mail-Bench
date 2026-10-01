@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use MAIL-Bench, please cite it as below."
+title: "MAIL-Bench: Benchmarking Robotic Manipulation under Visual Availability Interruptions and Loss"
+abstract: >-
+  MAIL-Bench is a paired, closed-loop benchmark for the robustness of embodied
+  manipulation policies under time-structured visual availability failures. On
+  RoboCasa Atomic-Seen -- 18 tasks and 900 frozen scenes -- it asks whether a
+  policy can solve a task with vision intact, at what phase of its own
+  successful trajectory vision is lost, which functional visual role is lost and
+  in what form, and how task success and completion efficiency change. It
+  standardizes the evaluation and leaves model design and training method open.
+type: software
+version: 1.0.0
+date-released: "2026-09-08"
+license: MIT
+authors:
+  - family-names: "Jiang"
+    given-names: "Mingle"
+    affiliation: "University of Sydney"
+repository-code: "https://github.com/minglejiang/MAIL-Bench"
+keywords:
+  - robotics
+  - benchmark
+  - missing camera
+  - robustness
+  - vision-language-action
+preferred-citation:
+  type: article
+  title: "Learning to Act under Visual Interruptions with Vision-Language-Action Models"
+  authors:
+    - family-names: "Jiang"
+      given-names: "Mingle"
+    - family-names: "Xu"
+      given-names: "Rui"
+    - family-names: "Wang"
+      given-names: "Yunke"
+    - family-names: "Xu"
+      given-names: "Chang"
+  journal: "arXiv preprint arXiv:2609.35003"
+  year: 2026
+  url: "https://arxiv.org/abs/2609.35003"

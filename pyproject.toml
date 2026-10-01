@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mail-bench"
+version = "1.0.0"
+description = "MAIL-Bench: benchmarking robotic manipulation under visual availability interruptions and loss"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mingle Jiang" }]
+keywords = ["robotics", "benchmark", "missing camera", "robustness", "vision-language-action"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/minglejiang/MAIL-Bench"
+Repository = "https://github.com/minglejiang/MAIL-Bench"
+Issues = "https://github.com/minglejiang/MAIL-Bench/issues"
+
+# The kernel imports only the standard library. numpy is needed to run rollouts
+# (frames and actions) and pyyaml to read the protocol and the suite; neither is
+# needed to import the package or to read a stored result.
+[project.optional-dependencies]
+numpy = ["numpy>=1.22"]
+yaml = ["pyyaml>=6.0"]
+test = ["numpy>=1.22", "pyyaml>=6.0", "pytest>=7.0"]
+all = ["numpy>=1.22", "pyyaml>=6.0", "pytest>=7.0"]
+
+[project.scripts]
+mail-inventory = "mail_bench.inventory:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

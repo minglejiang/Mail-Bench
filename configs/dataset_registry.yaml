@@ -1,0 +1,54 @@
+schema_version: 2
+policy:
+  intended_use: each dataset under its own licence; this ledger does not grant rights
+  commercial_track_enabled: false
+  allow_explicit_noncommercial_research_datasets: true
+  redistribute_raw_data: false
+  redistribute_derived_media: false
+  require_official_source: true
+  require_version_pin: true
+  require_inventory_sha256: true
+  require_inventory_manifest: true
+  inventory_schema: mail_dataset_inventory_v1
+  inventory_rule: sha256_of_canonical_json_over_sorted_relative_path_size_and_file_sha256
+  inventory_symlink_policy: reject
+  unresolved_license_action: hold_fail_closed
+  publish_only_adapters_manifests_and_aggregate_results: true
+  pin_fields:
+  - revision
+  - inventory_sha256
+  - accessed_on
+  unpinned_entries_blocked_from_experiments: true
+  license_fields:
+    spdx: SPDX identifier or NOASSERTION
+    license_note: free text for composite or custom terms
+  scope_note: This is the ledger of datasets a run may bind, not a licence for them. The benchmark's own
+    code is MIT (see LICENSE); every dataset and checkpoint it names stays under the terms of whoever
+    published it, and none of them is redistributed here. The benchmark evaluates one platform, so one entry is listed;
+    the fields below are what an entry must carry before a run may cite it.
+datasets:
+- id: robocasa
+  tier: primary_closed_loop
+  decision: core
+  topology:
+  - robot0_agentview_left
+  - robot0_agentview_right
+  - robot0_eye_in_hand
+  closed_loop: true
+  public_demonstrations: true
+  official_success: true
+  recommended_scope: atomic_seen_18
+  official_horizons_source: robocasa/utils/dataset_registry.py ATOMIC_TASK_DATASETS[*].horizon
+  source: https://robocasa.ai/docs/build/html/datasets/using_datasets.html
+  license_status: explicit
+  spdx: CC-BY-4.0
+  license_note: dataset and assets CC BY 4.0; code MIT
+  academic_evaluation: allowed
+  raw_redistribution: allowed_by_upstream_but_disabled_by_project
+  commercial_use: allowed_with_attribution
+  inventory_scope: robocasa_simulation_assets
+  inventory_manifest: data_inventory/robocasa_a07e365c958c4216cd6bbd5f30b47f09a65c6f00.json
+  revision: a07e365c958c4216cd6bbd5f30b47f09a65c6f00
+  inventory_sha256: 4ed564dd8a525172dc0195e40ac882521c82b7978ee15f341822621488b00b22
+  accessed_on: '2026-08-30'
+  pin_status: pinned

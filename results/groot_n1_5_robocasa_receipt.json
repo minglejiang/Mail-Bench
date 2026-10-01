@@ -1,0 +1,53 @@
+{
+  "checkpoint_path": "<local checkpoint root; identified by repo, revision and inventory digest below>",
+  "critical_files": [
+    "model.safetensors.index.json",
+    "config.json"
+  ],
+  "receipt": {
+    "critical_sha256": {
+      "config.json": "6713ae6e9ee07ebf30f18a231bedcf9c06f8c64595d62529b6eb175498ef0526",
+      "model.safetensors.index.json": "bec674fcd06f1c6c29e5ab0f057d148a5c76e7ef92d1688d6b4b8f838afc9746"
+    },
+    "files": {
+      "config.json": {
+        "inode": 51272643,
+        "mtime_ns": 1788408729361576269,
+        "size": 1706
+      },
+      "experiment_cfg/metadata.json": {
+        "inode": 51272642,
+        "mtime_ns": 1788408729345576318,
+        "size": 14140
+      },
+      "model-00001-of-00002.safetensors": {
+        "inode": 51272639,
+        "mtime_ns": 1788408782817412698,
+        "size": 4999367032
+      },
+      "model-00002-of-00002.safetensors": {
+        "inode": 51272632,
+        "mtime_ns": 1788408772769443444,
+        "size": 2586705312
+      },
+      "model.safetensors.index.json": {
+        "inode": 51272641,
+        "mtime_ns": 1788408729345576318,
+        "size": 104606
+      },
+      "trainer_state.json": {
+        "inode": 51272640,
+        "mtime_ns": 1788408729321576392,
+        "size": 2114814
+      }
+    },
+    "inventory_sha256": "bfbedfff92a2aace210c3db34d192ba7a53997ad38abb82dfe8a3f110e78d25a",
+    "repo": "robocasa/robocasa365_checkpoints",
+    "revision": "c484448aba1a9b60a04c9b0ca117241518ea69f3",
+    "schema_version": 1,
+    "verified_on": "2026-09-03"
+  },
+  "source_repo": "robocasa/robocasa365_checkpoints",
+  "source_revision": "c484448aba1a9b60a04c9b0ca117241518ea69f3",
+  "verification": "full_byte_level"
+}
